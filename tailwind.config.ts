@@ -22,6 +22,7 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          hover: "hsl(var(--primary-hover))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -47,6 +48,20 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        note: {
+          yellow: "hsl(var(--note-yellow))",
+          "yellow-dark": "hsl(var(--note-yellow-dark))",
+          blue: "hsl(var(--note-blue))",
+          "blue-dark": "hsl(var(--note-blue-dark))",
+          green: "hsl(var(--note-green))",
+          "green-dark": "hsl(var(--note-green-dark))",
+          orange: "hsl(var(--note-orange))",
+          "orange-dark": "hsl(var(--note-orange-dark))",
+          pink: "hsl(var(--note-pink))",
+          "pink-dark": "hsl(var(--note-pink-dark))",
+          purple: "hsl(var(--note-purple))",
+          "purple-dark": "hsl(var(--note-purple-dark))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -62,6 +77,20 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      backgroundImage: {
+        "gradient-primary": "var(--gradient-primary)",
+        "gradient-hero": "var(--gradient-hero)",
+        "gradient-card": "var(--gradient-card)",
+      },
+      boxShadow: {
+        card: "var(--shadow-card)",
+        note: "var(--shadow-note)",
+        hover: "var(--shadow-hover)",
+      },
+      transitionTimingFunction: {
+        smooth: "var(--transition-smooth)",
+        bounce: "var(--transition-bounce)",
       },
       keyframes: {
         "accordion-down": {
