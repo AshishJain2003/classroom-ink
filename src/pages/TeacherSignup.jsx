@@ -12,7 +12,7 @@ import Loader from '../components/Loader';
 const TeacherSignup = () => {
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
+    username: '',
     password: '',
     confirmPassword: ''
   });
@@ -23,7 +23,7 @@ const TeacherSignup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    if (!formData.name.trim() || !formData.email.trim() || !formData.password.trim()) {
+    if (!formData.name.trim() || !formData.username.trim() || !formData.password.trim()) {
       toast({
         title: "Missing Information",
         description: "Please fill in all required fields.",
@@ -54,7 +54,7 @@ const TeacherSignup = () => {
     try {
       await authAPI.signup({
         name: formData.name.trim(),
-        email: formData.email.trim(),
+        username: formData.username.trim(),
         password: formData.password
       });
       
@@ -96,7 +96,7 @@ const TeacherSignup = () => {
             <div className="mx-auto mb-4 p-4 bg-primary/10 rounded-full">
               <BookOpen className="h-12 w-12 text-primary" />
             </div>
-            <CardTitle className="text-2xl text-center text-primary">Teacher Signup</CardTitle>
+            <CardTitle className="text-2xl text-center text-primary">Create Teacher Account</CardTitle>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -113,13 +113,13 @@ const TeacherSignup = () => {
               </div>
 
               <div>
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="username">Username</Label>
                 <Input
-                  id="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  placeholder="Enter your email"
+                  id="username"
+                  type="text"
+                  value={formData.username}
+                  onChange={(e) => setFormData({...formData, username: e.target.value})}
+                  placeholder="Enter your username"
                   required
                 />
               </div>

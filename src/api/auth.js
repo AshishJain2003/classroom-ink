@@ -6,9 +6,9 @@ export const authAPI = {
   signup: async (teacherData) => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        const existingTeacher = mockTeachers.find(t => t.email === teacherData.email);
+        const existingTeacher = mockTeachers.find(t => t.username === teacherData.username);
         if (existingTeacher) {
-          reject(new Error('Teacher already exists'));
+          reject(new Error('Username already exists'));
         } else {
           const newTeacher = {
             id: Date.now().toString(),
@@ -25,10 +25,10 @@ export const authAPI = {
   },
 
   // Teacher login
-  login: async (email, password) => {
+  login: async (username, password) => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        const teacher = mockTeachers.find(t => t.email === email && t.password === password);
+        const teacher = mockTeachers.find(t => t.username === username && t.password === password);
         if (teacher) {
           localStorage.setItem('currentTeacher', JSON.stringify(teacher));
           resolve(teacher);

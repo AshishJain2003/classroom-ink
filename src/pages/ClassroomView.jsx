@@ -39,6 +39,8 @@ const ClassroomView = () => {
           const currentClassroom = classrooms.find(c => c.id === classroomId);
           if (currentClassroom) {
             setClassroom(currentClassroom);
+            setLoading(false);
+            return;
           }
         }
       } else {
@@ -53,14 +55,16 @@ const ClassroomView = () => {
             JSON.parse(localStorage.getItem('classrooms') || '[]')
               .find(c => c.id === student.classroomId)?.code || ''
           );
-          setClassroom(classroomData);
+          if (classroomData) {
+            setClassroom(classroomData);
+            setLoading(false);
+            return;
+          }
         }
       }
 
-      if (!user && !localStorage.getItem('currentStudent')) {
-        navigate('/');
-        return;
-      }
+      // If we get here, no valid user/classroom found
+      navigate('/');
     } catch (error) {
       console.error('Error loading classroom data:', error);
       toast({

@@ -47,6 +47,7 @@ const NoteForm = ({ onSubmit, onCancel }) => {
       });
     } catch (error) {
       console.error('Error submitting note:', error);
+      throw error; // Re-throw to let parent handle it
     } finally {
       setLoading(false);
     }

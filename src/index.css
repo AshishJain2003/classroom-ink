@@ -132,6 +132,63 @@
   .animation-delay-150 {
     animation-delay: 150ms;
   }
+
+  /* Note color utilities with proper text contrast */
+  .bg-note-yellow {
+    background-color: hsl(var(--note-yellow));
+    color: hsl(45 85% 25%);
+  }
+
+  .bg-note-blue {
+    background-color: hsl(var(--note-blue));
+    color: hsl(210 75% 25%);
+  }
+
+  .bg-note-green {
+    background-color: hsl(var(--note-green));
+    color: hsl(140 50% 25%);
+  }
+
+  .bg-note-orange {
+    background-color: hsl(var(--note-orange));
+    color: hsl(25 85% 25%);
+  }
+
+  .bg-note-pink {
+    background-color: hsl(var(--note-pink));
+    color: hsl(320 55% 25%);
+  }
+
+  .bg-note-purple {
+    background-color: hsl(var(--note-purple));
+    color: hsl(280 55% 25%);
+  }
+
+  /* Gradient utilities */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  /* Shadow utilities */
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-note {
+    box-shadow: var(--shadow-note);
+  }
+
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
 }
 
 @layer base {

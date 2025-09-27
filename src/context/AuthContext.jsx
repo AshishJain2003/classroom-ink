@@ -32,8 +32,8 @@ export const AuthProvider = ({ children }) => {
     setLoading(false);
   }, []);
 
-  const loginTeacher = async (email, password) => {
-    const teacher = await authAPI.login(email, password);
+  const loginTeacher = async (username, password) => {
+    const teacher = await authAPI.login(username, password);
     setTeacher(teacher);
     return teacher;
   };

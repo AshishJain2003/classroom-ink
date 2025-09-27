@@ -11,7 +11,7 @@ import Loader from '../components/Loader';
 
 const TeacherLogin = () => {
   const [formData, setFormData] = useState({
-    email: '',
+    username: '',
     password: ''
   });
   const [loading, setLoading] = useState(false);
@@ -20,10 +20,10 @@ const TeacherLogin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.email.trim() || !formData.password.trim()) {
+    if (!formData.username.trim() || !formData.password.trim()) {
       toast({
         title: "Missing Information",
-        description: "Please enter both email and password.",
+        description: "Please enter both username and password.",
         variant: "destructive"
       });
       return;
@@ -31,7 +31,7 @@ const TeacherLogin = () => {
 
     setLoading(true);
     try {
-      await authAPI.login(formData.email, formData.password);
+      await authAPI.login(formData.username, formData.password);
       toast({
         title: "Welcome back!",
         description: "Successfully logged in."
@@ -69,18 +69,18 @@ const TeacherLogin = () => {
             <div className="mx-auto mb-4 p-4 bg-primary/10 rounded-full">
               <BookOpen className="h-12 w-12 text-primary" />
             </div>
-            <CardTitle className="text-2xl text-center text-primary">Teacher Login</CardTitle>
+            <CardTitle className="text-2xl text-center text-primary">Teacher Sign In</CardTitle>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="username">Username</Label>
                 <Input
-                  id="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  placeholder="Enter your email"
+                  id="username"
+                  type="text"
+                  value={formData.username}
+                  onChange={(e) => setFormData({...formData, username: e.target.value})}
+                  placeholder="Enter your username"
                   required
                 />
               </div>
